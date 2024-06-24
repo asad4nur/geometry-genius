@@ -24,6 +24,8 @@
     <main>
         <div class="flex flex-col lg:flex-row ml-10">
             <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+
+                <!-- Triangle Card -->
                 <div class="card w-80 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/triangle.png" alt="Shoes" class="rounded-xl" />
@@ -39,51 +41,53 @@
                         </p>
                         <p class="text-black"> Area: <span  id="area-text-set">0</span> cm <sup>2</sup> </p>
                         <div class="card-actions mt-4">
-                            <button onclick="getTriangleInputValue()" class="btn btn-primary">Calculate</button>
+                            <button onclick="getTriangleInputValueById()" class="btn btn-primary">Calculate</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Ractangle Card -->
                 <div class="card w-80 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/rectangle.png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Rectangle!</h2>
-                        <p>Area (A) = 0.5 x b x h </p>
+                        <h2 class="card-title">Ractangle!</h2>
+                        <p>Area (A) = Width x Length </p>
                         <p>
-                            <input class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="base">
+                            <input id="ractangle-width-input" class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="width">
                             <span>cm</span>
-                            <input class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="hight">
+                            <input id="ractangle-length-input" class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="length">
                             <span>cm</span>
                         </p>
-                        <p>Area:</p>
+                        <p class="text-black"> Area: <span  id="ractangle-area">0</span> cm <sup>2</sup> </p>
                         <div class="card-actions mt-4">
-                            <button class="btn btn-primary">Calculate</button>
+                            <button onclick="elementInputValueById()" class="btn btn-primary">Calculate</button>
                         </div>
                     </div>
                 </div>
-
+                <!-- ellipse Card -->
                 <div class="card w-80 bg-base-100 shadow-xl">
                     <figure class="px-10 pt-10">
-                        <img src="images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+                        <img src="images/ellipse.png" alt="Shoes" class="rounded-xl" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Parallelogram!</h2>
-                        <p>Area (A) = 0.5 x b x h </p>
+                        <h2 class="card-title">Ellipse!</h2>
+                        <p>Area (A) = π ab </p>
                         <p>
-                            <input class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="base">
+                            <input id="ellipse-short-input" class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="short">
                             <span>cm</span>
-                            <input class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="hight">
+                            <input id="ellipse-large-input" class="p-1 px-2 w-24 bg-slate-200 rounded" type="text" placeholder="large">
                             <span>cm</span>
                         </p>
-                        <p>Area:</p>
+                        <p class="text-black"> Area: <span  id="ellipse-area">0</span> cm <sup>2</sup> </p>
                         <div class="card-actions mt-4">
-                            <button class="btn btn-primary">Calculate</button>
+                            <button onclick="getEllipseInputValuById()" class="btn btn-primary">Calculate</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Area Card -->
                 <div class="w-[400px]">
                     <div class="text-4xl">Area Calculator</div>
                 </div>

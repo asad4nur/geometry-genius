@@ -1,34 +1,54 @@
-function getTriangleInputValue (){
-    const baseInputValue = document.getElementById('triangle-base-input');
-    const InputValueString = baseInputValue.value;
-    const base = parseFloat(InputValueString);
+// calculate input field data
+function getElementInputValue (inputFieldId){
+    const elementInputValue = document.getElementById(inputFieldId);
+    const elementInputValueString = elementInputValue.value;
+    const value = elementInputValueString;
 
-    const hightInputValue = document.getElementById('triangle-hight-input');
-    const hightInputValueString = hightInputValue.value;
-    const hight = parseFloat(hightInputValueString);
+    return value;
+}
 
-    const area = 0.5 * base * hight;
-    const setAreaText = document.getElementById('area-text-set');
-    setAreaText.innerText = area;
+// Set innerText Functions
+function setAreaTextValue (elementTextId, area){
+    const areaValue = document.getElementById(elementTextId);
+    areaValue.innerText = area
+}
+
+// this is the ID tracing functions
+function elementInputValueById (){
+    const ractangleWidthID = getElementInputValue('ractangle-width-input')
+
+    const ractangleHighthID = getElementInputValue('ractangle-length-input')
+
+    if(isNaN(ractangleHighthID) || isNaN(ractangleWidthID)){
+        alert('Please insert a number');
+        return
+
+    }
+
+    const area = ractangleWidthID * ractangleHighthID;
+
+    setAreaTextValue('ractangle-area', area)
+    
 }
 
 
+// triangle element ID
+function getTriangleInputValueById (){
+    const triangleBaseId = getElementInputValue('triangle-base-input')
+    const triangleHightId = getElementInputValue('triangle-hight-input')
 
+    const area = 0.5 * triangleBaseId * triangleHightId;
+    setAreaTextValue('area-text-set', area)
+}
 
+// ellipse element ID
 
+function getEllipseInputValuById (){
+    const ellipseShortInputValue = getElementInputValue('ellipse-short-input')
+    const ellipseLargeInputValue = getElementInputValue('ellipse-large-input')
 
-// function getTriangleInputValue (valueFromInputField){
-//     const InputValue = document.getElementById(valueFromInputField);
-//     const InputValueString = InputValue.value;
-//     const value = parseFloat(InputValueString);
+    const area = 3.14 * ellipseShortInputValue * ellipseLargeInputValue;
+    const fixedAreaDecimal = area.toFixed(2)
+    setAreaTextValue('ellipse-area', fixedAreaDecimal)
 
-//     console.log(value);
-// }
-
-
-// document.getElementById('triangle-btn').addEventListener('click', function(){
-    
-//     const baseInputValue = getTriangleInputValue('triangle-base-input')
-//     const hightInputValue = getTriangleInputValue('triangle-hight-input')
-
-// })
+}
